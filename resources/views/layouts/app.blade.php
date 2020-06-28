@@ -60,7 +60,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a href="{{ route('users.index') }}" class="dropdown-item">Users Management</a>
+                                    <a href="{{ route('admin.users.index') }}" class="dropdown-item">Users Management</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
