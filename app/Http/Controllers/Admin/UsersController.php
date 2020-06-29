@@ -53,7 +53,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        DB::table('role_user')->where('user_id', $user->id)->delete();
+        $user->roles()->detach();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
         $user->roles()->sync($request->roles);
         return redirect()->route('admin.users.index');
     }
